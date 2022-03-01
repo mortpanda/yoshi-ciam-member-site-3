@@ -1,0 +1,24 @@
+<div class="cartHeadSection">
+  <mat-icon class="cartIcon">shopping_cart</mat-icon><a class="cartTitle">買い物かご</a>
+</div>
+
+<div class="carItemCountDiv">
+  <a class="carItemLebel">買い物かごの中の商品</a> <br/>
+  <div class="carItemCountDiv"><a class="carItemCount">{{ this.CartService.itemCount }}</a></div>
+</div>
+
+<div class="carItemCountDiv">
+  <a class="carItemLebel">お買い物小計</a> <br/>
+  <div class="carItemCountDiv"><a class="carItemCount">{{ this.CartService.numPrice | currency }}</a></div>
+</div>
+
+
+<div class="cartBtnDiv">
+  <button mat-raised-button (click)="goToCheckout()" class="cartBtn">
+    <mat-icon>shopping_cart</mat-icon>購入手続き
+  </button>
+
+  <button mat-raised-button (click)="this.CartService.clearCart()" class="cartBtn">
+    <mat-icon>remove_shopping_cart</mat-icon>Clear
+  </button>
+</div>

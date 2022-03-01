@@ -1,0 +1,154 @@
+<div class="wrapper">
+
+  <div class="page-header" style="background-image: url('assets/img/okta_blue_bg.png')">
+    <div class="fxcontainer" fxLayout="row wrap" fxLayoutAlign="center">
+
+      <div class="headContainer" fxLayout="columns" fxLayoutAlign="center">
+        <div class=userLoggedin>ようこそ <a class="usersName">{{this.OktaGetUserService.strFullName}}</a></div> <br />
+        <div class=userLoggedin>{{ GetWeatherService.strWeatherLocation }}<a class="strTemp">{{
+            GetWeatherService.strTemperature }}℃</a>
+        </div>
+
+        <div class=userLoggedin><img
+            src="{{ GetWeatherService.strIconURL + GetWeatherService.strIconString + GetWeatherService.strIconSizeMultipler}}"
+            class="imgWeather"></div>
+      </div>
+      <mat-tab-group mat-align-tabs="start" class="containerTab">
+  
+        <mat-tab>
+          <ng-template mat-tab-label>
+
+            <mat-icon>person</mat-icon>
+            プロファイル
+          </ng-template>
+
+          <div fxLayout="columns wrap" fxLayoutAlign="center">
+            <div>
+
+              <div class="item">
+                <div class="profileCard" fxLayout="row wrap" fxLayoutAlign="center center">
+                  <div class="profileLeftCard">
+                    <img src="assets/img/okta_user_icon_white.png" class="profileImg">
+                    <a class="itemHead">ユーザー情報</a>
+                  </div>
+                  <div></div>
+                  <div class="profileRightCard">
+                    <mat-card>
+                      <div class="profileLabelDiv"><a class="profileLabel">氏名：</a><a class="InfoProfile">{{
+                          this.OktaGetUserService.strFullName }}</a></div>
+                    </mat-card><br>
+                    <mat-card>
+                      <div class="profileLabelDiv"><a class="profileLabel">メールアドレス：</a><a class="InfoProfile">{{
+                          this.OktaGetUserService.strThisUser }}</a></div>
+                    </mat-card><br>
+                    <mat-card>
+                      <div class="profileLabelDiv"><a class="profileLabel">OktaユーザーID：</a><a class="InfoProfile">{{
+                          this.OktaGetUserService.strThisUserID }}</a></div>
+                    </mat-card>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div>
+              <div class="item">
+                <div class="profileCard" fxLayout="row wrap" fxLayoutAlign="left">
+                  <div class="profileLeftCard">
+                    <img src="assets/img/okta_office_small_white.png" class="profileImg">
+                    <a class="itemHead">所在地</a>
+                  </div>
+                  <div></div>
+                  <div class="profileRightCard">
+
+
+                    <mat-form-field appearance="fill" class="streetAddressDiv">
+                      <mat-label>住所</mat-label>
+                      <input matInput value="{{ this.OktaGetUserService.strStreeAddress }}"
+                        (change)="addressUpdated($event)">
+                    </mat-form-field>
+
+                    <div fxLayout="columns" fxLayoutAlign="left">
+                      <mat-form-field appearance="fill" class=" addressField">
+                        <mat-label>市町村</mat-label>
+                        <input matInput value="{{ this.OktaGetUserService.strLocality }}"
+                          (change)="cityUpdated($event)">
+                      </mat-form-field>
+
+                      <mat-form-field appearance="fill" class=" addressField">
+                        <mat-label>都道府県</mat-label>
+                        <input matInput value="{{ this.OktaGetUserService.strRegion }}"
+                          (change)="regionUpdated($event)">
+                      </mat-form-field>
+                    </div>
+
+                    <div fxLayout="columns" fxLayoutAlign="left">
+                      <mat-form-field appearance="fill" class=" addressField">
+                        <mat-label>〒</mat-label>
+                        <input matInput value="{{ this.OktaGetUserService.strPostCode }}" (change)="zipUpdated($event)">
+                      </mat-form-field>
+
+                      <mat-form-field appearance="fill" class=" addressField">
+                        <mat-label>国</mat-label>
+                        <input matInput value="{{ this.OktaGetUserService.strCountry }}">
+                      </mat-form-field>
+                    </div>
+
+                  </div>
+                  <a class="btn btn-reg-danger btn-round" class="btn btn-danger btn-round updateAddress"
+                    (click)="UpdateAddress()">住所を保存する</a>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="item">
+                <div class="profileCard" fxLayout="row wrap" fxLayoutAlign="left">
+                  <div class="profileLeftCard">
+                    <img src="assets/img/okta_deployment_small_white.png" class="profileImg">
+                    <a class="itemHead">ソリューション</a>
+                  </div>
+                  <div class="ucDiv"></div>
+                  <div fxLayout="columns wrap" fxLayoutAlign="center">
+                    <div><a><img src="assets/img/logo_ciam.png" class="imgUsecase"></a></div>
+                    <div>
+                      <mat-checkbox [checked]="this.OktaGetUserService.bolCIAM" (change)="ciamonChange($event)"
+                        class="ucCheck">
+                      </mat-checkbox>
+                    </div>
+                    <div><a>
+                        <img src="assets/img/logo_wf.png" class="imgUsecase">
+                      </a></div>
+                    <div>
+                      <mat-checkbox [checked]="this.OktaGetUserService.bolWorkforce"
+                        (change)="workforceonChange($event)" class="ucCheck">
+                      </mat-checkbox>
+                    </div>
+                    <div>
+                      <a class="btn btn-reg-danger btn-round" class="btn btn-danger btn-round updateUC"
+                        (click)="UpdateUC()">ご利用中のソリューションの変更</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </mat-tab>
+
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <mat-icon>shopping_bag</mat-icon>
+            Swagストア
+          </ng-template>
+          <app-swag-store></app-swag-store>
+        </mat-tab>
+
+        <!-- <mat-tab label="Third">Content 3</mat-tab> -->
+      </mat-tab-group>
+
+    </div>
+
+  </div>
+
+</div>

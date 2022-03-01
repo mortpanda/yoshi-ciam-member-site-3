@@ -1,0 +1,112 @@
+.stepperContainer {
+  min-width: 70% !important;
+  min-height: 60% !important;
+  font-family: "ABCWhyte Book", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu",
+    "Cantarell", "Helvetica Neue", sans-serif !important;
+  text-align: center !important;
+}
+
+.mat-stepper-horizontal,
+.mat-stepper-vertical {
+  border-radius: 5px !important;
+  /* min-width: 100%!important;
+  max-width: 100%!important; */
+  text-align: left !important;
+  margin-left: 20px !important;
+  margin-right: 20px !important;
+}
+
+.oktabanner {
+  margin-top: 15px !important;
+  width: 70% !important;
+  height: auto !important;
+  text-align: center!important;
+}
+
+.mat-step-header .mat-step-icon {
+  background-color: #8d6e97 !important;
+  color: #ffffff !important;
+}
+
+::ng-deep.mat-input-element {
+  caret-color: #3f51b5;
+}
+
+.strCountry {
+  /* margin-bottom: 0px!important; */
+  font-family: "ABCWhyte Book", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu",
+    "Cantarell", "Helvetica Neue", sans-serif !important;
+  text-align: center !important;
+  font-size: 20px !important;
+  color: #41414b !important;
+  font-weight: 500 !important;
+  padding-top: 30px !important;
+  margin-bottom: 10px!important;
+}
+.nameParts {
+  width: 100px !important;
+  height: 160px !important;
+  color: #00297a !important;
+}
+.addressParts {
+  width: 70% !important;
+  height: 160px !important;
+  color: #00297a !important;
+}
+
+.addressPartsSmall {
+  width: 70% !important;
+  height: 260px !important;
+  color: #00297a !important;
+}
+
+.stepperBack {
+  margin-right: 5px !important;
+}
+
+.orderContainer {
+  width: 100% !important;
+  /* height: 200px!important; */
+  overflow: auto !important;
+  margin-left: 20px!important;
+}
+.itemCard {
+  margin-top: 20px !important;
+  width: 60% !important;
+}
+
+.itemName {
+  color: #41414b !important;
+  font-size: 20px !important;
+}
+.itemImage {
+  margin-top: 5px!important;
+  margin-top: 5px!important;
+  max-width: 70px!important;
+  height:auto!important;
+  box-shadow: 3px 9px 10px -2px #41414b!important;
+  border-radius: 5px!important;
+}
+.itemPrice {
+  text-align: right !important;
+}
+.dividerDiv {
+  margin-bottom: 15px !important;
+}
+
+.rightContainer{
+
+}
+
+.leftContainer{
+width: 35%!important;
+margin-left: 25px!important;
+}
+
+.csBanner{
+  margin-top: 35px!important;
+  width: 90%!important;
+  height: auto!important;
+  box-shadow: 3px 9px 10px -2px #41414b!important;
+  border-radius: 5px!important;
+}

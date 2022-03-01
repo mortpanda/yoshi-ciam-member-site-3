@@ -1,0 +1,52 @@
+.cartIcon {
+  color: #ffffff !important;
+  margin-right: 5px !important;
+}
+.cartHeadSection {
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+  background-color: #00297a !important;
+  border-radius: 5px !important;
+  font-family: "ABCWhyte Book", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu",
+    "Cantarell", "Helvetica Neue", sans-serif !important;
+}
+.cartTitle {
+  color: #ffffff !important;
+  font-size: 20px !important;
+  font-family: "ABCWhyte Book", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu",
+    "Cantarell", "Helvetica Neue", sans-serif !important;
+}
+.cartBtn {
+  margin-right: 5px !important;
+  font-family: "ABCWhyte Book", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu",
+    "Cantarell", "Helvetica Neue", sans-serif !important;
+}
+
+.carItemCountDiv{
+  margin-top: 20px!important;
+  min-height: 70px!important;
+  max-height: 70px!important;
+  height: 70px!important;
+  font-family: "ABCWhyte Book", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu",
+    "Cantarell", "Helvetica Neue", sans-serif !important;
+}
+
+.carItemLebel{
+  color: #41414B!important;
+  font-size: 24px!important;
+}
+
+.carItemCount{
+  color: #8D6E97!important;
+  font-weight: 800!important;
+  font-size: 35px!important;
+}
+
+.carItemCountDiv{
+  margin-top:15px!important;
+  margin-bottom:15px!important;
+}

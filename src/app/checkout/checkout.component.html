@@ -1,0 +1,312 @@
+<div class="wrapper">
+  <div class="page-header" style="background-image: url('assets/img/okta_blue_bg.png')">
+    <div class="stepperContainer">
+      <ng-template #bigScreen>
+        <form [formGroup]="formGroup">
+          <mat-horizontal-stepper formArrayName="formArray" [linear]="false">
+            <mat-step formGroupName="0" [stepControl]="formArray?.get([0])">
+              <div fxLayout="columns">
+                <div class="leftContainer">
+                  <ng-template matStepLabel>お名前</ng-template>
+                  <div class="nameParts" fxLayout="row wrap" fxLayoutGap="10px">
+                    <div>
+                      <mat-form-field appearance="legacy">
+                        <mat-label>氏名</mat-label>
+                        <br>
+                        <input matInput formControlName="fullNameFormCtrl" required>
+                      </mat-form-field>
+                    </div>
+                    <div>
+                      <mat-form-field>
+                        <mat-label>Eメール</mat-label>
+                        <input matInput formControlName="emailFormCtrl" required>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div>
+                    <button mat-button class="btn btn-danger btn-round" class="btn btn-danger btn-round"
+                     matStepperNext>次へ</button>
+                  </div>
+                </div>
+                <div class="rightContainer">
+                  <div>
+                    <img class="csBanner" src="assets/img/okta_japan_medium_blue.png">
+                  </div>
+                </div>
+              </div>
+            </mat-step>
+            <mat-step formGroupName="0" [stepControl]="formArray?.get([0])">
+              <ng-template matStepLabel>
+                <div>ご住所</div>
+              </ng-template>
+              <div class="addressParts" fxLayout="row wrap" fxLayoutGap="10px">
+                <div>
+                  <mat-form-field>
+                    <mat-label>住所</mat-label>
+                    <input matInput formControlName="streetAddressFormCtrl">
+                  </mat-form-field>
+                </div>
+                <div>
+                  <mat-form-field>
+                    <mat-label>市町村</mat-label>
+                    <input matInput formControlName="localityFormCtrl">
+                  </mat-form-field>
+                </div>
+                <div>
+                  <mat-form-field>
+                    <mat-label>都道府県</mat-label>
+                    <input matInput formControlName="regionFormCtrl">
+                  </mat-form-field>
+                </div>
+                <div>
+                  <mat-form-field>
+                    <mat-label>〒</mat-label>
+                    <input matInput formControlName="postcodeFormCtrl">
+                  </mat-form-field>
+                </div>
+                <div>
+                  <a class="strCountry">国 : {{this.OktaGetUserService.strCountry}}</a>
+                </div>
+                <div>
+                </div>
+              </div>
+              <div>
+                <button mat-button class="btn btn-danger btn-round" class="btn btn-danger btn-round stepperBack"
+                 matStepperPrevious>戻る</button>
+                <button mat-button class="btn btn-danger btn-round" class="btn btn-danger btn-round"
+                 matStepperNext>次へ</button>
+              </div>
+            </mat-step>
+            <mat-step>
+              <ng-template matStepLabel>ご注文内容</ng-template>
+              <div class="orderContainer" fxLayout="rows wrap" fxLayoutGap="5px">
+                <div *ngFor="let item of arrShoppingItems" class="itemCard">
+                  <div class="itemNameDiv">
+                    <div class="itemName">{{ item.name }} </div>
+                  </div>
+                  <img class="itemImage" src="{{ item.image }}">
+                  <div>
+                    <div class="itemPrice">............................ {{ item.price | currency }}</div>
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div>
+                <button mat-button class="btn btn-danger btn-round" class="btn btn-danger btn-round stepperBack"
+                 matStepperPrevious>戻る</button>
+                <button mat-button class="btn btn-danger btn-round" class="btn btn-danger btn-round"
+                 matStepperNext>次へ</button>
+              </div>
+            </mat-step>
+            <mat-step>
+              <ng-template matStepLabel>お支払い</ng-template>
+              <form [formGroup]="paymentForm" class="paymentForm">
+                <div>
+                  <mat-form-field class="cardNumber" appearance="fill">
+                    <mat-label>クレジットカード番号</mat-label>
+                    <mat-icon matSuffix>credit_card</mat-icon>
+                    <input matInput id="cardNumber" name="cardNumber" formControlName="cardNumber">
+                  </mat-form-field>
+                </div>
+                <div>
+                  <mat-form-field appearance="fill" class="cardExpiry">
+                    <mat-label>月</mat-label>
+                    <mat-select formControlName="expiration_month" name="cardExpirationMonth">
+                      <mat-option value="option" *ngFor="let m of monthList">{{ m + '月'}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field appearance="fill" class="cardExpiry">
+                    <mat-label>年</mat-label>
+                    <mat-select formControlName="expiration_year" name="cardExpirationMonth">
+                      <mat-option value="option" *ngFor="let key of yearList">{{ key }}</mat-option>
+                    </mat-select>
+                    <mat-icon matSuffix>calendar_today</mat-icon>
+                  </mat-form-field>
+                  <br>
+                  <mat-form-field appearance="fill" class="cardType">
+                    <mat-label>カードの種類</mat-label>
+                    <mat-select>
+                      <mat-option value="option">
+                        <img with="30" height="30" src="assets/img/visa.png">
+                        <a class="cardText">VISA</a>
+                      </mat-option>
+                      <mat-option value="option">
+                        <img with="25" height="25" src="assets/img/mastercard.png">
+                        <a class="cardText">MASTER CARD</a>
+                      </mat-option>
+                      <mat-option value="option">
+                        <img with="30" height="30" src="assets/img/dinersclub.png">
+                        <a class="cardText">Diners Club</a>
+                      </mat-option>
+                      <mat-option value="option">
+                        <img with="30" height="30" src="assets/img/amex.png">
+                        <a class="cardText">American Express</a>
+                      </mat-option>
+                    </mat-select>
+                    <mat-icon matSuffix>card_membership</mat-icon>
+                  </mat-form-field>
+                </div>
+              </form>
+              <div>
+                <!-- <button mat-button>Done</button> -->
+                <button mat-button class="btn btn-danger btn-round" class="btn btn-danger btn-round" (click)="Checkout()">注文を確定する</button>
+              </div>
+            </mat-step>
+          </mat-horizontal-stepper>
+        </form>
+      </ng-template>
+      <!-- ************************************************ SMALL SCREEN ************************************************ -->
+      <!-- ************************************************ SMALL SCREEN ************************************************ -->
+      <ng-template [ngIf]="smallScreen" [ngIfElse]="bigScreen">
+        <form [formGroup]="formGroup">
+          <mat-vertical-stepper formArrayName="formArray" [linear]="false">
+            <mat-step formGroupName="0" [stepControl]="formArray?.get([0])">
+              <ng-template matStepLabel>お名前</ng-template>
+              <div class="nameParts" fxLayout="row wrap" fxLayoutGap="10px">
+                <div>
+                  <mat-form-field appearance="legacy">
+                    <mat-label>氏名</mat-label>
+                    <input matInput formControlName="fullNameFormCtrl" required>
+                  </mat-form-field>
+                </div>
+                <div>
+                  <mat-form-field>
+                    <mat-label>Eメール</mat-label>
+                    <input matInput formControlName="emailFormCtrl" required>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div>
+                <button mat-button class="btn btn-danger btn-round" class="btn btn-danger btn-round"
+                 matStepperNext>次へ</button>
+              </div>
+            </mat-step>
+            <mat-step formGroupName="0" [stepControl]="formArray?.get([0])">
+              <ng-template matStepLabel>
+                <div>ご住所</div>
+              </ng-template>
+              <div class="addressPartsSmall" fxLayout="row wrap" fxLayoutGap="10px">
+                <div>
+                  <mat-form-field>
+                    <mat-label>住所</mat-label>
+                    <input matInput formControlName="streetAddressFormCtrl">
+                  </mat-form-field>
+                </div>
+                <div>
+                  <mat-form-field>
+                    <mat-label>市町村</mat-label>
+                    <input matInput formControlName="localityFormCtrl">
+                  </mat-form-field>
+                </div>
+                <div>
+                  <mat-form-field>
+                    <mat-label>都道府県</mat-label>
+                    <input matInput formControlName="regionFormCtrl">
+                  </mat-form-field>
+                </div>
+                <div>
+                  <mat-form-field>
+                    <mat-label>〒</mat-label>
+                    <input matInput formControlName="postcodeFormCtrl">
+                  </mat-form-field>
+                </div>
+                <div>
+                  <a class="strCountry">国 : {{this.OktaGetUserService.strCountry}}</a>
+                </div>
+                <div>
+                </div>
+              </div>
+              <div>
+                <button mat-button class="btn btn-danger btn-round" class="btn btn-danger btn-round stepperBack"
+                 matStepperPrevious>戻る</button>
+                <button mat-button class="btn btn-danger btn-round" class="btn btn-danger btn-round"
+                 matStepperNext>次へ</button>
+              </div>
+            </mat-step>
+            <mat-step>
+              <ng-template matStepLabel>ご注文内容</ng-template>
+              <div class="orderContainer" fxLayout="rows wrap" fxLayoutGap="5px">
+                <div *ngFor="let item of arrShoppingItems" class="itemCard">
+                  <div class="itemNameDiv">
+                    <div class="itemName">{{ item.name }} </div>
+                  </div>
+                  <img class="itemImage" src="{{ item.image }}">
+                  <div>
+                    <div class="itemPrice">............................ {{ item.price | currency }}</div>
+                 </div>
+                </div>
+              </div>
+              <br />
+              <div>
+                <button mat-button class="btn btn-danger btn-round" class="btn btn-danger btn-round stepperBack"
+                 matStepperPrevious>戻る</button>
+                <button mat-button class="btn btn-danger btn-round" class="btn btn-danger btn-round"
+                 matStepperNext>次へ</button>
+              </div>
+            </mat-step>
+            <mat-step>
+              <ng-template matStepLabel>お支払い</ng-template>
+              <form [formGroup]="paymentForm" class="paymentForm">
+                <div>
+                  <mat-form-field class="cardNumber" appearance="fill">
+                    <mat-label>クレジットカード番号</mat-label>
+                    <mat-icon matSuffix>credit_card</mat-icon>
+                    <input matInput id="cardNumber" name="cardNumber" formControlName="cardNumber">
+                  </mat-form-field>
+                </div>
+                <div>
+                  <mat-form-field appearance="fill" class="cardExpiry">
+                    <mat-label>月</mat-label>
+                    <mat-select formControlName="expiration_month" name="cardExpirationMonth">
+                      <mat-option value="option" *ngFor="let m of monthList">{{ m + '月'}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field appearance="fill" class="cardExpiry">
+                    <mat-label>年</mat-label>
+                    <mat-select formControlName="expiration_year" name="cardExpirationMonth">
+                      <mat-option value="option" *ngFor="let key of yearList">{{ key }}</mat-option>
+                    </mat-select>
+                    <mat-icon matSuffix>calendar_today</mat-icon>
+                  </mat-form-field>
+                  <br>
+                  <mat-form-field appearance="fill" class="cardType">
+                    <mat-label>カードの種類</mat-label>
+                    <mat-select>
+                      <mat-option value="option">
+                        <img with="30" height="30" src="assets/img/visa.png">
+                        <a class="cardText">VISA</a>
+                      </mat-option>
+                      <mat-option value="option">
+                        <img with="25" height="25" src="assets/img/mastercard.png">
+                        <a class="cardText">MASTER CARD</a>
+                      </mat-option>
+                      <mat-option value="option">
+                        <img with="30" height="30" src="assets/img/dinersclub.png">
+                        <a class="cardText">Diners Club</a>
+                      </mat-option>
+                      <mat-option value="option">
+                        <img with="30" height="30" src="assets/img/amex.png">
+                        <a class="cardText">American Express</a>
+                      </mat-option>
+                    </mat-select>
+                    <mat-icon matSuffix>card_membership</mat-icon>
+                  </mat-form-field>
+                </div>
+              </form>
+              <div>
+                
+                <button mat-button class="btn btn-danger btn-round" class="btn btn-danger btn-round" (click)="Checkout()">注文を確定する</button>
+              </div>
+            </mat-step>
+          </mat-vertical-stepper>
+        </form>
+      </ng-template>
+      <!-- ************************************************ SMALL SCREEN ************************************************ -->
+      <!-- ************************************************ SMALL SCREEN ************************************************ -->
+      <!-- <div class="oktabanner">
+ 
+ <img src="assets/img/okta_japan_white_medium.png">
+ 
+ </div> -->
+    </div>
+  </div>

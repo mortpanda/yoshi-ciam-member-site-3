@@ -1,0 +1,282 @@
+.strTemp{
+  margin-left: 25px!important;
+  margin-right: 25px!important;
+  color: #ffffff !important;
+
+}
+.userText {
+  color: #ffffff !important;
+  text-align: center !important;
+  white-space: pre-line;
+  font-family: "ABCWhyte Book", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu",
+    "Cantarell", "Helvetica Neue", sans-serif !important;
+}
+
+.userContainer {
+  display: block !important;
+  white-space: pre-line;
+  font-family: "ABCWhyte Book", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu",
+    "Cantarell", "Helvetica Neue", sans-serif !important;
+}
+
+.item {
+  width: 350px;
+  height: 340px;
+  background-color: #ffffff;
+  margin: 5px;
+  border-radius: 5px !important;
+  font-family: "ABCWhyte Book", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu",
+    "Cantarell", "Helvetica Neue", sans-serif !important;
+}
+
+.fxcontainer {
+  width: 80%;
+  height: 80vh !important;
+  color: #00297a;
+  display: flex !important;
+  overflow: auto;
+  margin-top: 50px !important;
+  text-align: center!important;
+}
+.usersName {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+}
+.userNameItem {
+  height: 60px !important;
+  background-color: transparent !important;
+  color: #ffffff !important;
+  align-items: center !important;
+  font-family: "ABCWhyte Book", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu",
+    "Cantarell", "Helvetica Neue", sans-serif !important;
+  /* padding-top: 30px!important;*/
+  margin-bottom: 30px !important;
+}
+
+/* Hide the scrollbar byu still allow scroll : Chrome, Safari and Opera */
+.fxcontainer::-webkit-scrollbar {
+  display: none;
+}
+/* Hide the scrollbar byu still allow scroll :  IE, Edge and Firefox */
+.fxcontainer {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.profileRightCard {
+  font-family: "ABCWhyte Book", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu",
+    "Cantarell", "Helvetica Neue", sans-serif !important;
+  width: 100% !important;
+  background-color: #ffffff !important;
+  text-align: left !important;
+  color: #00297a !important;
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+  margin-top: 10px !important;
+  /* font-size: 10px!important; */
+  /* padding-bottom: 10px !important; */
+}
+
+.profileLeftCard {
+  font-family: "ABCWhyte Book", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu",
+    "Cantarell", "Helvetica Neue", sans-serif !important;
+  width: 100% !important;
+  background-color: #00297a !important;
+  text-align: center !important;
+  color: #ffffff !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  border-top-left-radius: 5px !important;
+  border-bottom-left-radius: 5px !important;
+  border-top-right-radius: 5px !important;
+  border-bottom-right-radius: 5px !important;
+  height: 100% !important;
+  margin-top: 5px!important;
+}
+.profileImg {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+.profileCard {
+  width: 340px !important;
+  /* height: 300px; */
+  background-color: #ffffff;
+  margin: 5px;
+  margin-top: 5px!important;
+  border-radius: 5px !important;
+  font-family: "ABCWhyte Book", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu",
+    "Cantarell", "Helvetica Neue", sans-serif !important;
+  text-align: center !important;
+  /* box-shadow: 3px 9px 10px -2px #41414b; */
+}
+
+.InfoProfile{
+ margin-top: 10px!important;
+ font-size: 18px!important;
+ color: #00297A!important;
+ font-weight: 700!important;
+ font-family: "ABCWhyte Book", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu",
+    "Cantarell", "Helvetica Neue", sans-serif !important;
+  text-align: center !important;
+}
+
+/* .profileLabelDiv{
+  margin-top: 20px!important; */
+  /* margin-bottom: 10px!important;
+} */
+
+.profileLabel{
+  color:#41414B!important;
+ 
+}
+
+.mat-form-field {
+  font-family: "ABCWhyte Book", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu",
+    "Cantarell", "Helvetica Neue", sans-serif !important;
+  line-height: 1.3;
+  width: 320px !important;
+}
+
+.addressField {
+  font-size: 12px !important;
+  width: 150px !important;
+  margin-right: 10px !important;
+}
+
+.streetAddressDiv {
+  font-size: 12px !important;
+  width: 310px !important;
+  margin-right: 10px !important;
+  margin-top: 20px !important;
+}
+.itemHead {
+  margin-left: 5px !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  vertical-align: middle !important;
+}
+
+.imgUsecase {
+  margin-top: 25px !important;
+  margin-left: 15px !important;
+  height: auto !important;
+  width: 200px !important;
+}
+
+.usecase {
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+}
+
+.imgWeather {
+  width: 50% !important;
+  height: auto !important;
+}
+
+.userLoggedin {
+  color: #ffffff !important;
+  font-family: "ABCWhyte Book", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu",
+    "Cantarell", "Helvetica Neue", sans-serif !important;
+  /* width: 30%!important; */
+  margin-left: 25px !important;
+  
+  height: 40px !important;
+}
+.headContainer {
+  width: 90% !important;
+  /* height: 10px !important; */
+  margin-top: 25px !important;
+  margin-bottom: 15px !important;
+}
+
+.ucCheck {
+  margin-top: 50px !important;
+  margin-left: 25px !important;
+}
+
+.ucDiv {
+  /* margin-left: 40px !important;
+  margin-top: 40px !important; */
+  
+}
+
+.toolBar {
+  font-family: "ABCWhyte Book", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu",
+    "Cantarell", "Helvetica Neue", sans-serif !important;
+  color: #00297a;
+  border-radius: 5px !important;
+  height: 50px!important;
+  width: 80%!important;
+}
+.updateAddress{
+  height:30px!important;
+  font-size: 10px!important;
+  padding: 0.5rem 18px; 
+  line-height: 1;
+}
+
+.menuBtn{
+  font-family: "ABCWhyte Book", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu",
+    "Cantarell", "Helvetica Neue", sans-serif !important;
+}
+
+.imgbanner{
+  margin-top: 40px !important; 
+  text-align: center!important;
+  width: 200px!important;
+  height: auto!important;
+}
+
+.updateUC{
+  margin-top:50px!important
+}
+
+.mat-tab-group {
+  /* display: flex;
+  flex-direction: column; */
+  font-family: "ABCWhyte Book", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu",
+    "Cantarell", "Helvetica Neue", sans-serif !important;
+    color: #FFFFFF!important;
+    min-width:90%!important;
+    min-height:90%!important;
+    margin-top: 50px!important;
+ 
+}
+
+.mat-tab-body-content {
+  height: auto!important;
+  /* width: 90%!important; */
+  overflow: auto;
+  margin-top: 15px!important;
+  min-height: 350px!important;
+  
+}
+
+.containerTab{
+  min-width:90%!important; 
+  margin-top: 0px!important;
+   
+}
+
+.mat-tab-label .mat-tab-label-content {
+opacity: 1!important;
+  font-family: "ABCWhyte Book", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu",
+    "Cantarell", "Helvetica Neue", sans-serif !important;
+    color: #FFFFFF!important;
+}
+.mat-tab-label{
+  opacity: 1!important;
+}
+
+.mat-tab-group::-webkit-scrollbar {
+  display: none;
+}
+
+.mat-tab-group {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

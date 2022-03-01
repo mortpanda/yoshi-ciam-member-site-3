@@ -1,0 +1,30 @@
+<div class="swagContainer" fxLayout="columns wrap" fxLayoutAlign="center" fxLayoutGap="10px">
+  <div class="cartBox">
+    <app-shopping-cart></app-shopping-cart>
+  </div>
+
+  <div class="swagItem" *ngFor="let swag of swags">
+    <div class="swagNameDiv">
+      <a class="swagName">{{ swag.name}}</a>
+    </div>
+    <div class="swagImgDiv">
+      <img src="{{swag.image}}" class="swagImage">
+    </div>
+    <div class="swagDescDiv">
+      <a class="swagDesc">{{swag.description}}</a>
+    </div>
+    <div class="swagPriceDiv">
+      <a class="swagPrice">{{swag.price | currency }}</a>
+    </div>
+    <div class="addToCartDiv">
+      <button mat-raised-button (click)="addToCart(swag)">
+        <mat-icon>shopping_cart</mat-icon>購入</button>
+    </div>
+  </div>
+
+</div>
+
+
+<div>
+  <img src="assets/img/okta_japan_white_medium.png" class="oktaBanner">
+</div>
